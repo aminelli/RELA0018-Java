@@ -1,6 +1,7 @@
 package com.corso.demo;
 
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
+import com.corso.samples.datatypes.WrapperTypesDemo;
 
 /**
  * Classe principale dell'applicazione Java21 Course
@@ -18,6 +19,7 @@ public class App {
 
         // Aggiunge le voci di menu per le varie demo
         addMenuItemPrimitiveTypes(menu);
+        addMenuItemWrapperTypes(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -38,6 +40,21 @@ public class App {
         menu.addMenuItem("Tipi Primitivi", () -> {
             // Esegue la demo completa dei tipi primitivi
             PrimitiveTypesDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo dei Tipi Wrapper
+     *
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemWrapperTypes(MenuTUI menu) {
+        menu.addMenuItem("Tipi Wrapper", () -> {
+            // Esegue la demo completa dei tipi wrapper
+            WrapperTypesDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
