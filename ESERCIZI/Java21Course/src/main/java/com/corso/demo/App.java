@@ -1,5 +1,6 @@
 package com.corso.demo;
 
+import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
 import com.corso.samples.datatypes.WrapperTypesDemo;
 
@@ -20,6 +21,7 @@ public class App {
         // Aggiunge le voci di menu per le varie demo
         addMenuItemPrimitiveTypes(menu);
         addMenuItemWrapperTypes(menu);
+        addMenuItemBigDecimalBigInteger(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -60,6 +62,22 @@ public class App {
             menu.waitForEnter();
         });
     }
+
+        /**
+     * Aggiunge al menu la voce per la demo di BigDecimal e BigInteger
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemBigDecimalBigInteger(MenuTUI menu) {
+        menu.addMenuItem("BigDecimal e BigInteger", () -> {
+            // Esegue la demo completa di BigDecimal e BigInteger
+            BigDecimalBigIntegerDemo.run();
+            
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+    
 
     /**
      * Aggiunge al menu la voce per uscire dall'applicazione
