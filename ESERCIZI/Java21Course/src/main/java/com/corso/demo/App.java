@@ -1,5 +1,7 @@
 package com.corso.demo;
 
+import com.corso.samples.datatypes.PrimitiveTypesDemo;
+
 /**
  * Classe principale dell'applicazione Java21 Course
  * Implementa un sistema di menu TUI per l'apprendimento di Java 21
@@ -14,6 +16,9 @@ public class App {
         // Crea un'istanza del menu TUI con il titolo dell'applicazione
         MenuTUI menu = new MenuTUI("Java 21 Course - Menu Principale");
 
+        // Aggiunge le voci di menu per le varie demo
+        addMenuItemPrimitiveTypes(menu);
+
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
         addMenuItemExit(menu);
@@ -24,6 +29,26 @@ public class App {
         menu.start();
     }
 
+    /**
+     * Aggiunge al menu la voce per la demo dei Tipi Primitivi
+     *
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemPrimitiveTypes(MenuTUI menu) {
+        menu.addMenuItem("Tipi Primitivi", () -> {
+            // Esegue la demo completa dei tipi primitivi
+            PrimitiveTypesDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per uscire dall'applicazione
+     *
+     * @param menu Il menu a cui aggiungere la voce
+     */
     private static void addMenuItemExit(MenuTUI menu) {
         menu.addMenuItem("Esci dall'applicazione", () -> {
             // Pulisce lo schermo
