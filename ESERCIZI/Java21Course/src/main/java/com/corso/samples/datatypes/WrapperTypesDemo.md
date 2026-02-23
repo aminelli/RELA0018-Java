@@ -752,7 +752,3 @@ Per approfondimenti, consulta:
 - [Java API Documentation - Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
 
 ---
-
-**Ultima modifica**: 22 febbraio 2026  
-**Versione Java**: 21  
-**Autore**: Java 21 Course
