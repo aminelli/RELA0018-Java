@@ -3,6 +3,7 @@ package com.corso.demo;
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.MathDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
+import com.corso.samples.datatypes.StringDemo;
 import com.corso.samples.datatypes.WrapperTypesDemo;
 
 /**
@@ -24,7 +25,7 @@ public class App {
         addMenuItemWrapperTypes(menu);
         addMenuItemBigDecimalBigInteger(menu);
         addMenuItemMath(menu);
-
+        addMenuItemString(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -97,7 +98,22 @@ public class App {
         });
     }
 
-    
+    /**
+     * Aggiunge al menu la voce per la demo del tipo String
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemString(MenuTUI menu) {
+        menu.addMenuItem("String", () -> {
+            // Esegue la demo completa del tipo String
+            StringDemo.run();
+            
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+
     /**
      * Aggiunge al menu la voce per uscire dall'applicazione
      *
