@@ -5,12 +5,13 @@ import com.corso.samples.datatypes.DateTimeDemo;
 import com.corso.samples.datatypes.FormatLocalizationDemo;
 import com.corso.samples.datatypes.LiteralsDemo;
 import com.corso.samples.datatypes.MathDemo;
+import com.corso.samples.datatypes.OptionalDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
 import com.corso.samples.datatypes.StringDemo;
 import com.corso.samples.datatypes.WrapperTypesDemo;
 import com.corso.samples.javabase.FlowControlStatementsDemo;
 import com.corso.samples.javabase.OperatorsDemo;
-import com.corso.samples.javabase.SwitchAvanzatiDemo;
+import com.corso.samples.javabase.SwitchAdvancedDemo;
 
 /**
  * Classe principale dell'applicazione Java21 Course
@@ -35,9 +36,12 @@ public class App {
         addMenuItemDateTime(menu);
         addMenuItemFormatLocalization(menu);
         addMenuItemLiterals(menu);
+
         addMenuItemOperators(menu);
         addMenuItemFlowControlStatements(menu);
         addMenuItemSwitchAdvanced(menu);
+
+        addMenuItemOptional(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -202,7 +206,22 @@ public class App {
     private static void addMenuItemSwitchAdvanced(MenuTUI menu) {
         menu.addMenuItem("Switch Advanced", () -> {
             // Esegue la demo completa sugli switch avanzati
-            SwitchAvanzatiDemo.run();
+            SwitchAdvancedDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo su Optional
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemOptional(MenuTUI menu) {
+        menu.addMenuItem("Optional", () -> {
+            // Esegue la demo completa su Optional
+            OptionalDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();

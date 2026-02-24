@@ -13,7 +13,7 @@ import java.util.Map;
  * gestione del null, guardie con "when", best practices e anti-pattern.
  * </p>
  */
-public class SwitchAvanzatiDemo {
+public class SwitchAdvancedDemo {
 
     private static final String RESET = "\u001B[0m";
     private static final String CYAN = "\u001B[36m";
@@ -22,7 +22,7 @@ public class SwitchAvanzatiDemo {
     private static final String MAGENTA = "\u001B[35m";
     private static final String YELLOW = "\u001B[33m";
 
-    private SwitchAvanzatiDemo() {
+    private SwitchAdvancedDemo() {
     }
 
     /**
@@ -36,15 +36,15 @@ public class SwitchAvanzatiDemo {
     public static void run() {
         printHeader("SWITCH AVANZATI IN JAVA 21");
 
-        demoIntroduzione();
-        demoSwitchStatementClassico();
+        demoIntroduction();
+        demoSwitchStatementClassic();
         demoSwitchExpression();
-        demoSwitchConYield();
-        demoSwitchSuEnum();
-        demoSwitchSuStringConNormalizzazione();
+        demoSwitchWithYield();
+        demoSwitchOverEnum();
+        demoSwitchOverStringWithNormalization();
         demoPatternMatchingSwitch();
-        demoSwitchConNullCase();
-        demoSwitchConGuardieWhen();
+        demoSwitchWithNullCase();
+        demoSwitchWithGuardiesWhen();
         demoUseCaseBusinessRouting();
         demoBestPractices();
 
@@ -54,7 +54,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Introduzione teorica per inquadrare il costrutto.
      */
-    private static void demoIntroduzione() {
+    private static void demoIntroduction() {
         printSection("1) Introduzione");
 
         // Lo switch è un costrutto di selezione multipla:
@@ -71,7 +71,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra lo switch statement tradizionale con break.
      */
-    private static void demoSwitchStatementClassico() {
+    private static void demoSwitchStatementClassic() {
         printSection("2) Switch statement classico");
 
         int month = 4;
@@ -127,7 +127,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra l'uso di yield in blocchi switch expression.
      */
-    private static void demoSwitchConYield() {
+    private static void demoSwitchWithYield() {
         printSection("4) Switch expression con yield");
 
         String role = "MANAGER";
@@ -151,7 +151,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra l'uso su enum con mapping semantico.
      */
-    private static void demoSwitchSuEnum() {
+    private static void demoSwitchOverEnum() {
         printSection("5) Switch su enum");
 
         TicketPriority priority = TicketPriority.HIGH;
@@ -171,7 +171,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra switch su stringa con normalizzazione input.
      */
-    private static void demoSwitchSuStringConNormalizzazione() {
+    private static void demoSwitchOverStringWithNormalization() {
         printSection("6) Switch su String con normalizzazione");
 
         String commandFromUser = "  StaRt  ";
@@ -215,7 +215,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra la gestione esplicita del null in switch.
      */
-    private static void demoSwitchConNullCase() {
+    private static void demoSwitchWithNullCase() {
         printSection("8) Switch con case null");
 
         String regionCode = null;
@@ -236,7 +236,7 @@ public class SwitchAvanzatiDemo {
     /**
      * Mostra guardie con when per affinare i pattern.
      */
-    private static void demoSwitchConGuardieWhen() {
+    private static void demoSwitchWithGuardiesWhen() {
         printSection("9) Switch con guardie (when)");
 
         List<Object> metrics = List.of(120, 55, -3, "ok", "");
