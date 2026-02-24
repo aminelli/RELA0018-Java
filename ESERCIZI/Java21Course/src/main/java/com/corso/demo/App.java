@@ -8,6 +8,7 @@ import com.corso.samples.datatypes.MathDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
 import com.corso.samples.datatypes.StringDemo;
 import com.corso.samples.datatypes.WrapperTypesDemo;
+import com.corso.samples.javabase.OperatorsDemo;
 
 /**
  * Classe principale dell'applicazione Java21 Course
@@ -32,6 +33,7 @@ public class App {
         addMenuItemDateTime(menu);
         addMenuItemFormatLocalization(menu);
         addMenuItemLiterals(menu);
+        addMenuItemOperators(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -158,6 +160,21 @@ public class App {
             // Esegue la demo completa dei letterali (literals)
             LiteralsDemo.run();
 
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+        /**
+     * Aggiunge al menu la voce per la demo degli Operatori
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemOperators(MenuTUI menu) {
+        menu.addMenuItem("Operatori", () -> {
+            // Esegue la demo completa degli operatori e type casting
+            OperatorsDemo.run();
+            
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
         });
