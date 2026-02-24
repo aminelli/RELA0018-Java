@@ -2,6 +2,7 @@ package com.corso.demo;
 
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.DateTimeDemo;
+import com.corso.samples.datatypes.FormatLocalizationDemo;
 import com.corso.samples.datatypes.MathDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
 import com.corso.samples.datatypes.StringDemo;
@@ -28,6 +29,7 @@ public class App {
         addMenuItemMath(menu);
         addMenuItemString(menu);
         addMenuItemDateTime(menu);
+        addMenuItemFormatLocalization(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -123,6 +125,21 @@ public class App {
         menu.addMenuItem("Date & Time", () -> {
             // Esegue la demo completa di Date & Time (java.time API)
             DateTimeDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo di Format e Localization
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemFormatLocalization(MenuTUI menu) {
+        menu.addMenuItem("Format e Localization", () -> {
+            // Esegue la demo completa di Format e Localization
+            FormatLocalizationDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
