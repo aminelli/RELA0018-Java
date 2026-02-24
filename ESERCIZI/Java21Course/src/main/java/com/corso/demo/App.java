@@ -1,6 +1,7 @@
 package com.corso.demo;
 
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
+import com.corso.samples.datatypes.DateTimeDemo;
 import com.corso.samples.datatypes.MathDemo;
 import com.corso.samples.datatypes.PrimitiveTypesDemo;
 import com.corso.samples.datatypes.StringDemo;
@@ -26,11 +27,12 @@ public class App {
         addMenuItemBigDecimalBigInteger(menu);
         addMenuItemMath(menu);
         addMenuItemString(menu);
+        addMenuItemDateTime(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
         addMenuItemExit(menu);
-        
+
         // Avvia il loop principale del menu
         // Il programma rimarrà in esecuzione finché l'utente non seleziona l'opzione di
         // uscita
@@ -67,7 +69,7 @@ public class App {
         });
     }
 
-        /**
+    /**
      * Aggiunge al menu la voce per la demo di BigDecimal e BigInteger
      * 
      * @param menu Il menu a cui aggiungere la voce
@@ -76,12 +78,11 @@ public class App {
         menu.addMenuItem("BigDecimal e BigInteger", () -> {
             // Esegue la demo completa di BigDecimal e BigInteger
             BigDecimalBigIntegerDemo.run();
-            
+
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
         });
     }
-
 
     /**
      * Aggiunge al menu la voce per la demo di Math
@@ -107,12 +108,26 @@ public class App {
         menu.addMenuItem("String", () -> {
             // Esegue la demo completa del tipo String
             StringDemo.run();
-            
+
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
         });
     }
 
+    /**
+     * Aggiunge al menu la voce per la demo di Date & Time
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemDateTime(MenuTUI menu) {
+        menu.addMenuItem("Date & Time", () -> {
+            // Esegue la demo completa di Date & Time (java.time API)
+            DateTimeDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
 
     /**
      * Aggiunge al menu la voce per uscire dall'applicazione
