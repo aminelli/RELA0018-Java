@@ -13,6 +13,8 @@ import com.corso.samples.javabase.FlowControlStatementsDemo;
 import com.corso.samples.javabase.OperatorsDemo;
 import com.corso.samples.javabase.SwitchAdvancedDemo;
 import com.corso.samples.oop.ClassDemo;
+import com.corso.samples.oop.InterfaceDemo;
+import com.corso.samples.oop.OOPDemo;
 
 /**
  * Classe principale dell'applicazione Java21 Course
@@ -45,7 +47,8 @@ public class App {
         addMenuItemOptional(menu);
 
         addMenuItemClass(menu);
-
+        addMenuItemOOP(menu);
+        addMenuItemInterfaces(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -232,10 +235,10 @@ public class App {
         });
     }
 
-
-        /**
+    /**
      * Aggiunge la voce di menu per la demo sulle classi
-     * Questa voce esegue ClassDemo che mostra l'utilizzo avanzato delle classi in Java 21
+     * Questa voce esegue ClassDemo che mostra l'utilizzo avanzato delle classi in
+     * Java 21
      * 
      * @param menu L'istanza del menu TUI a cui aggiungere la voce
      */
@@ -244,6 +247,36 @@ public class App {
 
             // Esegue la dimostrazione completa sulle classi
             ClassDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo OOP
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemOOP(MenuTUI menu) {
+        menu.addMenuItem("OOP", () -> {
+            // Esegue la demo completa su incapsulamento, ereditarietà e polimorfismo
+            OOPDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sulle Interfacce
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemInterfaces(MenuTUI menu) {
+        menu.addMenuItem("Interfacce", () -> {
+            // Esegue la demo completa sulle interfacce
+            InterfaceDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
