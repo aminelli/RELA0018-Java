@@ -12,6 +12,7 @@ import com.corso.samples.datatypes.WrapperTypesDemo;
 import com.corso.samples.javabase.FlowControlStatementsDemo;
 import com.corso.samples.javabase.OperatorsDemo;
 import com.corso.samples.javabase.SwitchAdvancedDemo;
+import com.corso.samples.oop.ClassDemo;
 
 /**
  * Classe principale dell'applicazione Java21 Course
@@ -42,6 +43,9 @@ public class App {
         addMenuItemSwitchAdvanced(menu);
 
         addMenuItemOptional(menu);
+
+        addMenuItemClass(menu);
+
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -222,6 +226,24 @@ public class App {
         menu.addMenuItem("Optional", () -> {
             // Esegue la demo completa su Optional
             OptionalDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+
+        /**
+     * Aggiunge la voce di menu per la demo sulle classi
+     * Questa voce esegue ClassDemo che mostra l'utilizzo avanzato delle classi in Java 21
+     * 
+     * @param menu L'istanza del menu TUI a cui aggiungere la voce
+     */
+    private static void addMenuItemClass(MenuTUI menu) {
+        menu.addMenuItem("Class", () -> {
+
+            // Esegue la dimostrazione completa sulle classi
+            ClassDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
