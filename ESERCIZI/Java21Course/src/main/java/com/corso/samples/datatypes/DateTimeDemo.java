@@ -698,6 +698,7 @@ public class DateTimeDemo {
         printSubSection("Formatter Predefiniti");
         
         LocalDateTime now = LocalDateTime.now();
+        ZonedDateTime now2  = ZonedDateTime.now();
         
         System.out.println("LocalDateTime now = LocalDateTime.now();");
         System.out.println("  → now = " + now + "\n");
@@ -711,8 +712,8 @@ public class DateTimeDemo {
         
         System.out.println("FormatStyle.SHORT  → " + now.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)));
         System.out.println("FormatStyle.MEDIUM → " + now.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
-        System.out.println("FormatStyle.LONG   → " + now.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG)));
-        System.out.println("FormatStyle.FULL   → " + now.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL)) + "\n");
+        System.out.println("FormatStyle.LONG   → " + now2.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG)));
+        System.out.println("FormatStyle.FULL   → " + now2.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL)) + "\n");
         
         printSubSection("Pattern Custom");
         
