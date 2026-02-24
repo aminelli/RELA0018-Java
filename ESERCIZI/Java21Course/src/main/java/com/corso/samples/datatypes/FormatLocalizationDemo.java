@@ -402,7 +402,10 @@ public class FormatLocalizationDemo {
         System.out.println();
         printSubSection("Messaggi Base con Parametri");
         
-        String pattern = "L'utente {0} ha inviato {1} messaggi alle {2}.";
+        // Attenzionecje gli apici devono essere scritti nel pattern come '' per essere interpretati come letterali
+        // altri casi: parantesi {}, simboli di formattazione come #, ., ecc. devono essere usati con attenzione
+        // Esempio con parantesi graffe: "{" diventa "'{'"
+        String pattern = "L''utente {0} ha inviato {1} messaggi alle {2}.";
         MessageFormat mf = new MessageFormat(pattern, Locale.ITALY);
         
         Object[] args = {"Alice", 5, new Date()};
