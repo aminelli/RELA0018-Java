@@ -1,6 +1,8 @@
 package com.corso.demo;
 
 import com.corso.samples.array_collections.ArrayDemo;
+import com.corso.samples.array_collections.CollectionDemo;
+import com.corso.samples.array_collections.StreamsDemo;
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.DateTimeDemo;
 import com.corso.samples.datatypes.FormatLocalizationDemo;
@@ -60,6 +62,8 @@ public class App {
         addMenuItemLamda(menu);
 
         addMenuItemArray(menu);
+        addMenuItemCollection(menu);
+        addMenuItemStreams(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -363,6 +367,36 @@ public class App {
         menu.addMenuItem("Array", () -> {
             // Esegue la demo completa degli Array
             ArrayDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sulle Collection
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemCollection(MenuTUI menu) {
+        menu.addMenuItem("Collection", () -> {
+            // Esegue la demo completa sulle Collection
+            CollectionDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sugli Streams
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemStreams(MenuTUI menu) {
+        menu.addMenuItem("streams", () -> {
+            // Esegue la demo completa sugli Streams
+            StreamsDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
