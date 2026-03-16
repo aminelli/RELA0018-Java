@@ -13,10 +13,12 @@ import com.corso.samples.javabase.FlowControlStatementsDemo;
 import com.corso.samples.javabase.OperatorsDemo;
 import com.corso.samples.javabase.SwitchAdvancedDemo;
 import com.corso.samples.oop.ClassDemo;
+import com.corso.samples.oop.GenericsDemo;
 import com.corso.samples.oop.InterfaceDemo;
 import com.corso.samples.oop.MethodsPropertiesDemo;
 import com.corso.samples.oop.OOPDemo;
 import com.corso.samples.oop.VisibilityLevelsDemo;
+
 /**
  * Classe principale dell'applicazione Java21 Course
  * Implementa un sistema di menu TUI per l'apprendimento di Java 21
@@ -52,6 +54,7 @@ public class App {
         addMenuItemInterfaces(menu);
         addMenuItemMethodProperties(menu);
         addMenuItemVisibilityLevels(menu);
+        addMenuItemGenerics(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -301,7 +304,7 @@ public class App {
         });
     }
 
-        /**
+    /**
      * Aggiunge al menu la voce per la demo sui livelli di visibilità
      * 
      * @param menu Il menu a cui aggiungere la voce
@@ -310,6 +313,21 @@ public class App {
         menu.addMenuItem("Livelli Visibilità", () -> {
             // Esegue la demo completa sui livelli di visibilità
             VisibilityLevelsDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sui Generics
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemGenerics(MenuTUI menu) {
+        menu.addMenuItem("Generics", () -> {
+            // Esegue la demo completa sui Generics
+            GenericsDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
