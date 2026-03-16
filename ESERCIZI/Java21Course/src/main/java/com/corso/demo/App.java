@@ -1,5 +1,6 @@
 package com.corso.demo;
 
+import com.corso.samples.array_collections.ArrayDemo;
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.DateTimeDemo;
 import com.corso.samples.datatypes.FormatLocalizationDemo;
@@ -57,6 +58,8 @@ public class App {
         addMenuItemVisibilityLevels(menu);
         addMenuItemGenerics(menu);
         addMenuItemLamda(menu);
+
+        addMenuItemArray(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -345,6 +348,21 @@ public class App {
         menu.addMenuItem("Lamda", () -> {
             // Esegue la demo completa sulle Lambda function
             LambdaDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo degli Array
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemArray(MenuTUI menu) {
+        menu.addMenuItem("Array", () -> {
+            // Esegue la demo completa degli Array
+            ArrayDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
