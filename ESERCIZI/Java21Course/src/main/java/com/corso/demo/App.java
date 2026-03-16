@@ -15,6 +15,7 @@ import com.corso.samples.javabase.SwitchAdvancedDemo;
 import com.corso.samples.oop.ClassDemo;
 import com.corso.samples.oop.GenericsDemo;
 import com.corso.samples.oop.InterfaceDemo;
+import com.corso.samples.oop.LambdaDemo;
 import com.corso.samples.oop.MethodsPropertiesDemo;
 import com.corso.samples.oop.OOPDemo;
 import com.corso.samples.oop.VisibilityLevelsDemo;
@@ -55,6 +56,7 @@ public class App {
         addMenuItemMethodProperties(menu);
         addMenuItemVisibilityLevels(menu);
         addMenuItemGenerics(menu);
+        addMenuItemLamda(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -328,6 +330,21 @@ public class App {
         menu.addMenuItem("Generics", () -> {
             // Esegue la demo completa sui Generics
             GenericsDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sulle Lambda function
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemLamda(MenuTUI menu) {
+        menu.addMenuItem("Lamda", () -> {
+            // Esegue la demo completa sulle Lambda function
+            LambdaDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
