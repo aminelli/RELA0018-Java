@@ -1,7 +1,9 @@
 package com.corso.demo;
 
+import com.corso.samples.advanced.AnnotationAdvancedDemo;
 import com.corso.samples.advanced.ConcurrencyMultithreadingDemo;
 import com.corso.samples.advanced.ReflectionAdvancedDemo;
+import com.corso.samples.advanced.SerializationAdvancedDemo;
 import com.corso.samples.array_collections.ArrayDemo;
 import com.corso.samples.array_collections.CollectionDemo;
 import com.corso.samples.array_collections.ConcurrentCollectionsMultithreadingDemo;
@@ -70,8 +72,10 @@ public class App {
 
         addMenuItemConcurrencyMultithreading(menu);
         addMenuItemConcurrentCollectionsMultithreading(menu);
-        
+
         addMenuItemReflectionAdvanced(menu);
+        addMenuItemAnnotationAdvanced(menu);
+        addMenuItemSerializationAdvancedDemo(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -402,7 +406,7 @@ public class App {
      * @param menu Il menu a cui aggiungere la voce
      */
     private static void addMenuItemStreams(MenuTUI menu) {
-        menu.addMenuItem("streams", () -> {
+        menu.addMenuItem("Streams", () -> {
             // Esegue la demo completa sugli Streams
             StreamsDemo.run();
 
@@ -427,8 +431,6 @@ public class App {
         });
     }
 
-   
-
     /**
      * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
      * e multithreading
@@ -445,15 +447,14 @@ public class App {
         });
     }
 
-
-/**
+    /**
      * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
      * e multithreading
      * 
      * @param menu Il menu a cui aggiungere la voce
      */
     private static void addMenuItemReflectionAdvanced(MenuTUI menu) {
-        menu.addMenuItem("Reflection Advanced", () -> {
+        menu.addMenuItem("Reflection", () -> {
             // Esegue la demo completa sugli Streams
             ReflectionAdvancedDemo.run();
 
@@ -462,7 +463,37 @@ public class App {
         });
     }
 
-    
+    /**
+     * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
+     * e multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemAnnotationAdvanced(MenuTUI menu) {
+        menu.addMenuItem("Annotation", () -> {
+            // Esegue la demo completa sugli Streams
+            AnnotationAdvancedDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
+     * e multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemSerializationAdvancedDemo(MenuTUI menu) {
+        menu.addMenuItem("Serialization ", () -> {
+            // Esegue la demo completa sugli Streams
+            SerializationAdvancedDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
 
     /**
      * Aggiunge al menu la voce per uscire dall'applicazione
