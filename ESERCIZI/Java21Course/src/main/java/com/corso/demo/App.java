@@ -1,7 +1,9 @@
 package com.corso.demo;
 
+import com.corso.samples.advanced.ConcurrencyMultithreadingDemo;
 import com.corso.samples.array_collections.ArrayDemo;
 import com.corso.samples.array_collections.CollectionDemo;
+import com.corso.samples.array_collections.ConcurrentCollectionsMultithreadingDemo;
 import com.corso.samples.array_collections.StreamsDemo;
 import com.corso.samples.datatypes.BigDecimalBigIntegerDemo;
 import com.corso.samples.datatypes.DateTimeDemo;
@@ -64,6 +66,9 @@ public class App {
         addMenuItemArray(menu);
         addMenuItemCollection(menu);
         addMenuItemStreams(menu);
+
+        addMenuItemConcurrencyMultithreading(menu);
+        addMenuItemConcurrentCollectionsMultithreading(menu);
 
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
@@ -397,6 +402,38 @@ public class App {
         menu.addMenuItem("streams", () -> {
             // Esegue la demo completa sugli Streams
             StreamsDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sugli ambienti concorrenti e
+     * multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemConcurrencyMultithreading(MenuTUI menu) {
+        menu.addMenuItem("Concurrency e Multithreading", () -> {
+            // Esegue la demo completa sugli Streams
+            ConcurrencyMultithreadingDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    /**
+     * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
+     * e multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemConcurrentCollectionsMultithreading(MenuTUI menu) {
+        menu.addMenuItem("Collections Concurrency e Multithreading", () -> {
+            // Esegue la demo completa sugli Streams
+            ConcurrentCollectionsMultithreadingDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
