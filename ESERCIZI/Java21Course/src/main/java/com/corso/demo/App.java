@@ -1,5 +1,6 @@
 package com.corso.demo;
 
+import com.corso.samples.advanced.ConcurrencyMultithreadingAdvancedDemo;
 import com.corso.samples.advanced.ConcurrencyMultithreadingDemo;
 import com.corso.samples.array_collections.ArrayDemo;
 import com.corso.samples.array_collections.CollectionDemo;
@@ -68,8 +69,9 @@ public class App {
         addMenuItemStreams(menu);
 
         addMenuItemConcurrencyMultithreading(menu);
+        addMenuItemConcurrencyMultithreadingAdvanced(menu);
         addMenuItemConcurrentCollectionsMultithreading(menu);
-
+        
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
         addMenuItemExit(menu);
@@ -418,6 +420,22 @@ public class App {
         menu.addMenuItem("Concurrency e Multithreading", () -> {
             // Esegue la demo completa sugli Streams
             ConcurrencyMultithreadingDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+        /**
+     * Aggiunge al menu la voce per la demo sugli ambienti concorrenti e
+     * multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemConcurrencyMultithreadingAdvanced(MenuTUI menu) {
+        menu.addMenuItem("Concurrency e Multithreading (Advanced)", () -> {
+            // Esegue la demo completa sugli Streams
+            ConcurrencyMultithreadingAdvancedDemo.run();
 
             // Attende che l'utente prema INVIO prima di tornare al menu
             menu.waitForEnter();
