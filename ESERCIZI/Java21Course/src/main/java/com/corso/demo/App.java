@@ -1,7 +1,7 @@
 package com.corso.demo;
 
-import com.corso.samples.advanced.ConcurrencyMultithreadingAdvancedDemo;
 import com.corso.samples.advanced.ConcurrencyMultithreadingDemo;
+import com.corso.samples.advanced.ReflectionAdvancedDemo;
 import com.corso.samples.array_collections.ArrayDemo;
 import com.corso.samples.array_collections.CollectionDemo;
 import com.corso.samples.array_collections.ConcurrentCollectionsMultithreadingDemo;
@@ -69,9 +69,10 @@ public class App {
         addMenuItemStreams(menu);
 
         addMenuItemConcurrencyMultithreading(menu);
-        addMenuItemConcurrencyMultithreadingAdvanced(menu);
         addMenuItemConcurrentCollectionsMultithreading(menu);
         
+        addMenuItemReflectionAdvanced(menu);
+
         // Aggiunge la voce per uscire dall'applicazione
         // Quando selezionata, questa voce termina il programma
         addMenuItemExit(menu);
@@ -426,21 +427,7 @@ public class App {
         });
     }
 
-        /**
-     * Aggiunge al menu la voce per la demo sugli ambienti concorrenti e
-     * multithreading
-     * 
-     * @param menu Il menu a cui aggiungere la voce
-     */
-    private static void addMenuItemConcurrencyMultithreadingAdvanced(MenuTUI menu) {
-        menu.addMenuItem("Concurrency e Multithreading (Advanced)", () -> {
-            // Esegue la demo completa sugli Streams
-            ConcurrencyMultithreadingAdvancedDemo.run();
-
-            // Attende che l'utente prema INVIO prima di tornare al menu
-            menu.waitForEnter();
-        });
-    }
+   
 
     /**
      * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
@@ -457,6 +444,25 @@ public class App {
             menu.waitForEnter();
         });
     }
+
+
+/**
+     * Aggiunge al menu la voce per la demo sulle collection in ambienti conorrenti
+     * e multithreading
+     * 
+     * @param menu Il menu a cui aggiungere la voce
+     */
+    private static void addMenuItemReflectionAdvanced(MenuTUI menu) {
+        menu.addMenuItem("Reflection Advanced", () -> {
+            // Esegue la demo completa sugli Streams
+            ReflectionAdvancedDemo.run();
+
+            // Attende che l'utente prema INVIO prima di tornare al menu
+            menu.waitForEnter();
+        });
+    }
+
+    
 
     /**
      * Aggiunge al menu la voce per uscire dall'applicazione
