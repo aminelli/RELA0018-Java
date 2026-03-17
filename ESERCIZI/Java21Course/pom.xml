@@ -23,6 +23,28 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Jackson Core: libreria principale per serializzazione/deserializzazione JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+        
+        <!-- Jackson support per Java 8+ Date/Time API (LocalDate, LocalDateTime, etc.) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+        
+        <!-- Jackson support per parameter names (opzionale ma utile) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-parameter-names</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+
     </dependencies>
   
     <build>
